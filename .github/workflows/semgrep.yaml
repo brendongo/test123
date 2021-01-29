@@ -8,7 +8,7 @@ jobs:
       INPUT_PUBLISHURL: https://dev.semgrep.dev
     steps:
       - uses: actions/checkout@v1
-      - uses: returntocorp/semgrep-action@v1
+      - uses: returntocorp/semgrep-action@adb6c1892fb3fdd4aff3d17ff1c7acda71a580a7
         # Optional environment variable for inline PR comments (beta)
         # env:
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
