@@ -5,7 +5,7 @@ jobs:
     name: Scan
     runs-on: ubuntu-latest
     env:
-      INPUT_PUBLISHURL: https://snowflake.testing.semgrep.dev
+      INPUT_PUBLISHURL: https://dev.semgrep.dev
     steps:
       - uses: actions/checkout@v1
       - uses: returntocorp/semgrep-action@v1
@@ -14,4 +14,4 @@ jobs:
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           publishToken: ${{ secrets.SEMGREP_APP_TOKEN }}
-          publishDeployment: 1
+          publishDeployment: 61
