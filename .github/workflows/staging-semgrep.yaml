@@ -15,4 +15,3 @@ jobs:
         with:
           publishToken: ${{ secrets.STAGING_SEMGREP_APP_TOKEN }}
           publishDeployment: 48
-          config: non_existent.yaml
