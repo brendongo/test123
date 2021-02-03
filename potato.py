@@ -2,7 +2,7 @@ x = 1
 if x is x:
 	print("hi")
 
-if a == a:
+if b == b:
 	print("useless")
 
 if x is "potato":
