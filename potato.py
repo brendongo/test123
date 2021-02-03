@@ -10,6 +10,6 @@ if x is "potato":
 
 a = 123456789
 5 == 5
-"hi" == "hi"
+"hi" is "hi"
 print('hello')
-client("s3", aws_secret_access_key="xxFAKExTESTxxxxx")
+client("s3", aws_secret_access_key="jWnyxxxxxxxxxxxxxxxxX7ZQxxxxxxxxxxxxxxxx")
