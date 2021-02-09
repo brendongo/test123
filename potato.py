@@ -1,10 +1,6 @@
-x = 1
-if x is x:
-	print("hi")
+import requests
 
-if b == b:
-	print("useless")
-
-if x is "potato":
-	print("hello")
-
+def get_objects(obj_id):
+	url = f"https://api.service.com/objects/{obj_id}"
+	r = requests.get(url)
+	return r
