@@ -167,5 +167,5 @@ import requests
 
 def get_objects(obj_id):
 	url = f"https://api.service.com/objects/{obj_id}"
-	resp = requests.get(url)
-	return resp
+	something = requests.get(url)
+	return something
