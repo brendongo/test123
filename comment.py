@@ -1,5 +1,7 @@
 import requests
 import sys
+import json
+from pathlib import Path
 
 def main():
     session = requests.Session()
@@ -7,6 +9,9 @@ def main():
     url = f"https://api.github.com/repos/returntocorp/semgrep/pulls/{sys.argv[2]}/comments"
     print(url)
     message = "Test message"
+
+
+    commit_id = json.loads(Path(os.getenv("GITHUB_EVENT_PATH")).read_text())["pull_request"]["head"]["sha"]
 
     pr_comment_payload = {
         "body": message,
