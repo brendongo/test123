@@ -11,7 +11,7 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - run: |
-          python3 comment.py ${{ secrets.GITHUB_TOKEN }} ${{ github.event.number }} ${{ $GITHUB_SHA }}
+          python3 comment.py ${{ secrets.GITHUB_TOKEN }} ${{ github.event.number }} $GITHUB_SHA
 
   semgrep:
     name: Scan
