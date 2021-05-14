@@ -12,7 +12,7 @@ jobs:
           python-version: ${{ matrix.python }}
       - run: |
         python3 comment.py strict
-        STRICT_EXIT_CODE=$?
+        STRICT_EXIT_CODE="hello?"
       - if: ${{ STRICT_EXIT_CODE==1 }}
         run: |
         echo "Hello"
