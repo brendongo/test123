@@ -11,15 +11,7 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - run: |
-          set +e
-          python3 comment.py strict
-          STRICT_EXIT_CODE=$?
-      - if: ${{ $STRICT_EXIT_CODE==1 }}
-        run: |
-          echo "Hello"
-      - if: ${{ $STRICT_EXIT_CODE==0 }}
-        run: |
-          echo "Hi"
+          python3 comment.py ${{ secrets.GITHUB_TOKEN }} ${{ github.event.number }} ${{ github.sha }}
 
   semgrep:
     name: Scan
