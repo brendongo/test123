@@ -4,7 +4,7 @@ import sys
 def main():
     session = requests.Session()
     session.headers["Authorization"] = f"token {sys.argv[1]}"
-    url = f"https://api/github.com/repos/returntocorp/semgrep/pulls/{sys.argv[2]}/comments"
+    url = f"https://api.github.com/repos/returntocorp/semgrep/pulls/{sys.argv[2]}/comments"
     print(url)
     message = "Test message"
 
