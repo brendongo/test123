@@ -2,6 +2,7 @@ import requests
 import sys
 import json
 from pathlib import Path
+import os
 
 def main():
     session = requests.Session()
