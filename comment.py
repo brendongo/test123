@@ -12,6 +12,7 @@ def main():
         "body": message,
         "commit_id": sys.argv[3]
     }
+    print(pr_comment_payload)
 
     r = session.post(url,json=pr_comment_payload)
     print(r.status_code)
