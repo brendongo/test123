@@ -13,6 +13,9 @@ def main():
         "commit_id": sys.argv[3]
     }
 
-    session.post(url,json=pr_comment_payload)
+    r = session.post(url,json=pr_comment_payload)
+    print(r.status_code)
+    r.raise_for_status()
+
 
 main()
