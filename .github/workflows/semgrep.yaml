@@ -1,6 +1,22 @@
 name: Semgrep
 on: [pull_request]
 jobs:
+  pr_comment:
+    name:  Testing PR Comment
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - run: |
+        set +e
+        python3 comment.py strict
+        STRICT_EXIT_CODE= $?
+      - if: ${{ STRICT_EXIT_CODE==1 }}
+        run: |
+        echo "Hello"
+      - if: ${{ STRICT_EXIT_CODE==0 }}
+        run: |
+        echo "Hi"
+
   semgrep:
     name: Scan
     runs-on: ubuntu-latest
