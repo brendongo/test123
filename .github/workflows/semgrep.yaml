@@ -9,7 +9,7 @@ jobs:
       - run: |
         set +e
         python3 comment.py strict
-        STRICT_EXIT_CODE= $?
+        STRICT_EXIT_CODE=$(echo $?)
       - if: ${{ STRICT_EXIT_CODE==1 }}
         run: |
         echo "Hello"
