@@ -6,10 +6,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python }}
       - run: |
         set +e
         python3 comment.py strict
-        STRICT_EXIT_CODE=$(echo $?)
+        STRICT_EXIT_CODE=$?
       - if: ${{ STRICT_EXIT_CODE==1 }}
         run: |
         echo "Hello"
