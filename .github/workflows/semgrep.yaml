@@ -11,14 +11,15 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - run: |
-        python3 comment.py strict
-        STRICT_EXIT_CODE="hello?"
+          set +e
+          python3 comment.py strict
+          STRICT_EXIT_CODE=$?
       - if: ${{ STRICT_EXIT_CODE==1 }}
         run: |
-        echo "Hello"
+          echo "Hello"
       - if: ${{ STRICT_EXIT_CODE==0 }}
         run: |
-        echo "Hi"
+          echo "Hi"
 
   semgrep:
     name: Scan
