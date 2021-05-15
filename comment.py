@@ -8,6 +8,9 @@ def main():
     session = requests.Session()
     session.headers["Authorization"] = f"Token {sys.argv[1]}"
     url = f"https://api.github.com/repos/brendongo/test123/pulls/{sys.argv[2]}/comments"
+    github_session.headers[
+        "Accept"
+    ] = "application/vnd.github.comfort-fade-preview+json"
     print(url)
     message = "Test message"
 
