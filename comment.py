@@ -13,10 +13,9 @@ def main():
 
 
     commit_id = json.loads(Path(os.getenv("GITHUB_EVENT_PATH")).read_text())["pull_request"]["head"]["sha"]
-
     pr_comment_payload = {
         "body": message,
-        "commit_id": sys.argv[3]
+        "commit_id": commit_id,
     }
     print(pr_comment_payload)
 
