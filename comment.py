@@ -7,7 +7,7 @@ import os
 def main():
     session = requests.Session()
     session.headers["Authorization"] = f"Token {sys.argv[1]}"
-    url = f"https://api.github.com/repos/brendongo/test123/pulls/{sys.argv[2]}/comments"
+    url = f"https://api.github.com/repos/brendongo/test123/issues/{sys.argv[2]}/comments"
     session.headers[
         "Accept"
     ] = "application/vnd.github.comfort-fade-preview+json"
