@@ -3,7 +3,7 @@ on: [pull_request]
 jobs:
   semgrep:
     name: Scan
-    runs-on: macos-lates
+    runs-on: macos-latest
     steps:
       - run: echo "hello"
       - run: sleep 300
