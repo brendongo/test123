@@ -1,10 +1,16 @@
 name: Semgrep
 on: [pull_request]
 jobs:
+  sleep:
+    name: sleep 5min
+    runs-on: ubuntu-16.04
+    steps:
+      - run: sleep 5m
+
   semgrep:
     name: Scan
+    needs: [sleep]
     runs-on: macos-latest
     steps:
       - run: echo "hello"
-      - run: sleep 300
       - run: echo "hi"
