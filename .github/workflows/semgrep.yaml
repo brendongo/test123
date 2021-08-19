@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       INPUT_PUBLISHURL: https://dev.semgrep.dev
+      SEMGREP_AGENT_DEBUG: 1
     steps:
       - uses: actions/checkout@v1
       - uses: returntocorp/semgrep-action@v1
