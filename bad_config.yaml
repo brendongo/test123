@@ -1,0 +1,12 @@
+rules:
+- id: basic_xss
+  patternz:
+      - pattern-either:
+        - pattern: $_GET[$KEY]
+        - pattern: $_POST[$KEY]
+      - pattern-inside: echo $X;
+      - pattern-not-inside: htmlentities(...)
+  languages: [php]
+  mode: search
+  message: Look for basic XSS
+  severity: WARNING
