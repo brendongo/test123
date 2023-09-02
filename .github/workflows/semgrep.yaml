@@ -1,6 +1,18 @@
 name: Semgrep
 on: [pull_request]
 jobs:
+  pr_comment:
+    name:  Testing PR Comment
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: ${{ matrix.python }}
+      - run: |
+          python3 comment.py ${{ secrets.GITHUB_TOKEN }} ${{ github.event.number }} $GITHUB_SHA
+
   semgrep:
     name: Scan
     runs-on: ubuntu-latest
